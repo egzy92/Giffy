@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4234BAB128417D5B00B4DE37 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4234BAB028417D5B00B4DE37 /* SnapKit */; };
+		42389C192845F7D0006C30B2 /* CellColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C182845F7D0006C30B2 /* CellColors.swift */; };
+		42389C2128462358006C30B2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2028462358006C30B2 /* Cache.swift */; };
+		42389C242846239A006C30B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42389C232846239A006C30B2 /* SDWebImage */; };
+		424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EB2844EDDB00893CF7 /* ShareViewController.swift */; };
+		424026EE2844EDE800893CF7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026ED2844EDE800893CF7 /* ShareView.swift */; };
+		424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EF2844EDF600893CF7 /* ShareViewModel.swift */; };
+		424026F32845611100893CF7 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026F22845611100893CF7 /* UIControl.swift */; };
+		4243EAE428436B2800FF78DE /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAE328436B2800FF78DE /* Pagination.swift */; };
+		4243EAE62843D23600FF78DE /* MetaInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAE52843D23600FF78DE /* MetaInfo.swift */; };
+		4243EAE82843D33300FF78DE /* TrendingGifs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAE72843D33300FF78DE /* TrendingGifs.swift */; };
+		4243EAEA2843FE0B00FF78DE /* ImagesInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */; };
+		4243EAEC284407B000FF78DE /* GalleryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAEB284407B000FF78DE /* GalleryViewCell.swift */; };
+		4243EAEF28440C1100FF78DE /* FLAnimatedImage in Frameworks */ = {isa = PBXBuildFile; productRef = 4243EAEE28440C1100FF78DE /* FLAnimatedImage */; };
+		4243EAF128441F1800FF78DE /* CustomGalleryLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4243EAF028441F1800FF78DE /* CustomGalleryLayout.swift */; };
+		4255C7342842D8B9006A0418 /* GiffyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4255C7332842D8B9006A0418 /* GiffyAPI.swift */; };
+		42B43FA1284162950099BD14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FA0284162950099BD14 /* AppDelegate.swift */; };
+		42B43FA3284162950099BD14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FA2284162950099BD14 /* SceneDelegate.swift */; };
+		42B43FAA284162980099BD14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B43FA9284162980099BD14 /* Assets.xcassets */; };
+		42B43FAD284162980099BD14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B43FAB284162980099BD14 /* LaunchScreen.storyboard */; };
+		42B43FB5284164FE0099BD14 /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FB4284164FE0099BD14 /* GalleryViewController.swift */; };
+		42B43FBA284165780099BD14 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FB9284165780099BD14 /* GalleryViewModel.swift */; };
+		42B43FBD2841674F0099BD14 /* GifModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FBC2841674F0099BD14 /* GifModel.swift */; };
+		42B43FBF28416B370099BD14 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B43FBE28416B370099BD14 /* GalleryView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		42389C182845F7D0006C30B2 /* CellColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellColors.swift; sourceTree = "<group>"; };
+		42389C2028462358006C30B2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		424026EB2844EDDB00893CF7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		424026ED2844EDE800893CF7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
+		424026EF2844EDF600893CF7 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
+		424026F22845611100893CF7 /* UIControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
+		4243EAE328436B2800FF78DE /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		4243EAE52843D23600FF78DE /* MetaInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaInfo.swift; sourceTree = "<group>"; };
+		4243EAE72843D33300FF78DE /* TrendingGifs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingGifs.swift; sourceTree = "<group>"; };
+		4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesInfo.swift; sourceTree = "<group>"; };
+		4243EAEB284407B000FF78DE /* GalleryViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewCell.swift; sourceTree = "<group>"; };
+		4243EAF028441F1800FF78DE /* CustomGalleryLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomGalleryLayout.swift; sourceTree = "<group>"; };
+		4255C7332842D8B9006A0418 /* GiffyAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GiffyAPI.swift; sourceTree = "<group>"; };
+		42B43F9D284162950099BD14 /* MynaGiff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MynaGiff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42B43FA0284162950099BD14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42B43FA2284162950099BD14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		42B43FA9284162980099BD14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42B43FAC284162980099BD14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42B43FAE284162980099BD14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42B43FB4284164FE0099BD14 /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
+		42B43FB9284165780099BD14 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
+		42B43FBC2841674F0099BD14 /* GifModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifModel.swift; sourceTree = "<group>"; };
+		42B43FBE28416B370099BD14 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42B43F9A284162950099BD14 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42389C242846239A006C30B2 /* SDWebImage in Frameworks */,
+				4234BAB128417D5B00B4DE37 /* SnapKit in Frameworks */,
+				4243EAEF28440C1100FF78DE /* FLAnimatedImage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		42389C1C28460F2B006C30B2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4243EAEB284407B000FF78DE /* GalleryViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		42389C1D28460F39006C30B2 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				4243EAF028441F1800FF78DE /* CustomGalleryLayout.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+		42389C1E28460F52006C30B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4255C7332842D8B9006A0418 /* GiffyAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		42389C2528462F8F006C30B2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				424026EA2844EDC600893CF7 /* ShareView */,
+				42B43FC028416B3C0099BD14 /* GalleryView */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		424026EA2844EDC600893CF7 /* ShareView */ = {
+			isa = PBXGroup;
+			children = (
+				424026EB2844EDDB00893CF7 /* ShareViewController.swift */,
+				424026ED2844EDE800893CF7 /* ShareView.swift */,
+				424026EF2844EDF600893CF7 /* ShareViewModel.swift */,
+			);
+			path = ShareView;
+			sourceTree = "<group>";
+		};
+		424026F12845610400893CF7 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				424026F22845611100893CF7 /* UIControl.swift */,
+				42389C182845F7D0006C30B2 /* CellColors.swift */,
+				42389C2028462358006C30B2 /* Cache.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		42B43F94284162950099BD14 = {
+			isa = PBXGroup;
+			children = (
+				42B43F9F284162950099BD14 /* MynaGiff */,
+				42B43F9E284162950099BD14 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42B43F9E284162950099BD14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42B43F9D284162950099BD14 /* MynaGiff.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42B43F9F284162950099BD14 /* MynaGiff */ = {
+			isa = PBXGroup;
+			children = (
+				42389C2528462F8F006C30B2 /* Modules */,
+				42389C1E28460F52006C30B2 /* Network */,
+				424026F12845610400893CF7 /* Helpers */,
+				42B43FBB284166D10099BD14 /* Models */,
+				42B43FA0284162950099BD14 /* AppDelegate.swift */,
+				42B43FA2284162950099BD14 /* SceneDelegate.swift */,
+				42B43FA9284162980099BD14 /* Assets.xcassets */,
+				42B43FAB284162980099BD14 /* LaunchScreen.storyboard */,
+				42B43FAE284162980099BD14 /* Info.plist */,
+			);
+			path = MynaGiff;
+			sourceTree = "<group>";
+		};
+		42B43FBB284166D10099BD14 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42B43FBC2841674F0099BD14 /* GifModel.swift */,
+				4243EAE328436B2800FF78DE /* Pagination.swift */,
+				4243EAE52843D23600FF78DE /* MetaInfo.swift */,
+				4243EAE72843D33300FF78DE /* TrendingGifs.swift */,
+				4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		42B43FC028416B3C0099BD14 /* GalleryView */ = {
+			isa = PBXGroup;
+			children = (
+				42389C1D28460F39006C30B2 /* Layout */,
+				42389C1C28460F2B006C30B2 /* Cells */,
+				42B43FB4284164FE0099BD14 /* GalleryViewController.swift */,
+				42B43FBE28416B370099BD14 /* GalleryView.swift */,
+				42B43FB9284165780099BD14 /* GalleryViewModel.swift */,
+			);
+			path = GalleryView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42B43F9C284162950099BD14 /* MynaGiff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42B43FB1284162980099BD14 /* Build configuration list for PBXNativeTarget "MynaGiff" */;
+			buildPhases = (
+				42B43F99284162950099BD14 /* Sources */,
+				42B43F9A284162950099BD14 /* Frameworks */,
+				42B43F9B284162950099BD14 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MynaGiff;
+			packageProductDependencies = (
+				4234BAB028417D5B00B4DE37 /* SnapKit */,
+				4243EAEE28440C1100FF78DE /* FLAnimatedImage */,
+				42389C232846239A006C30B2 /* SDWebImage */,
+			);
+			productName = MynaGiff;
+			productReference = 42B43F9D284162950099BD14 /* MynaGiff.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42B43F95284162950099BD14 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					42B43F9C284162950099BD14 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+				};
+			};
+			buildConfigurationList = 42B43F98284162950099BD14 /* Build configuration list for PBXProject "MynaGiff" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42B43F94284162950099BD14;
+			packageReferences = (
+				4234BAAF28417D5B00B4DE37 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				4243EAED28440C1100FF78DE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */,
+				42389C222846239A006C30B2 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
+			productRefGroup = 42B43F9E284162950099BD14 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42B43F9C284162950099BD14 /* MynaGiff */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42B43F9B284162950099BD14 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B43FAD284162980099BD14 /* LaunchScreen.storyboard in Resources */,
+				42B43FAA284162980099BD14 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42B43F99284162950099BD14 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				424026EE2844EDE800893CF7 /* ShareView.swift in Sources */,
+				424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */,
+				4243EAEA2843FE0B00FF78DE /* ImagesInfo.swift in Sources */,
+				4255C7342842D8B9006A0418 /* GiffyAPI.swift in Sources */,
+				42B43FBF28416B370099BD14 /* GalleryView.swift in Sources */,
+				42389C192845F7D0006C30B2 /* CellColors.swift in Sources */,
+				42B43FBA284165780099BD14 /* GalleryViewModel.swift in Sources */,
+				424026F32845611100893CF7 /* UIControl.swift in Sources */,
+				42B43FBD2841674F0099BD14 /* GifModel.swift in Sources */,
+				42B43FB5284164FE0099BD14 /* GalleryViewController.swift in Sources */,
+				4243EAE62843D23600FF78DE /* MetaInfo.swift in Sources */,
+				42389C2128462358006C30B2 /* Cache.swift in Sources */,
+				4243EAE428436B2800FF78DE /* Pagination.swift in Sources */,
+				4243EAE82843D33300FF78DE /* TrendingGifs.swift in Sources */,
+				42B43FA1284162950099BD14 /* AppDelegate.swift in Sources */,
+				42B43FA3284162950099BD14 /* SceneDelegate.swift in Sources */,
+				4243EAF128441F1800FF78DE /* CustomGalleryLayout.swift in Sources */,
+				424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */,
+				4243EAEC284407B000FF78DE /* GalleryViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42B43FAB284162980099BD14 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42B43FAC284162980099BD14 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42B43FAF284162980099BD14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42B43FB0284162980099BD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42B43FB2284162980099BD14 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J2ZJWD4C2Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MynaGiff/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Simply want to get access to your photos";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egzy.MynaGiff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		42B43FB3284162980099BD14 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J2ZJWD4C2Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MynaGiff/Info.plist;
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Simply want to get access to your photos";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = egzy.MynaGiff;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42B43F98284162950099BD14 /* Build configuration list for PBXProject "MynaGiff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B43FAF284162980099BD14 /* Debug */,
+				42B43FB0284162980099BD14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42B43FB1284162980099BD14 /* Build configuration list for PBXNativeTarget "MynaGiff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42B43FB2284162980099BD14 /* Debug */,
+				42B43FB3284162980099BD14 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4234BAAF28417D5B00B4DE37 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		42389C222846239A006C30B2 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		4243EAED28440C1100FF78DE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Flipboard/FLAnimatedImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4234BAB028417D5B00B4DE37 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4234BAAF28417D5B00B4DE37 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		42389C232846239A006C30B2 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42389C222846239A006C30B2 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		4243EAEE28440C1100FF78DE /* FLAnimatedImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4243EAED28440C1100FF78DE /* XCRemoteSwiftPackageReference "FLAnimatedImage" */;
+			productName = FLAnimatedImage;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 42B43F95284162950099BD14 /* Project object */;
+}
