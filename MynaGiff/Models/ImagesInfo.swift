@@ -11,10 +11,10 @@ struct ImagesInfo: Codable, Hashable {
 }
 
 struct ImageInfo: Codable, Hashable {
-    var height: String
-    var width: String
-    var size: String
-    var url: String
+    var height: String?
+    var width: String?
+    var size: String?
+    var url: String?
     var mp4Size: String?
     var mp4: String?
     var webpSize: String?

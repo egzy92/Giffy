@@ -90,7 +90,7 @@ final class ShareView: UIView {
     }
     
     private func setupLayout(gifModel: GifModel) {
-        let aspectCoef = (Double(gifModel.images.original.height) ?? 0) / (Double(gifModel.images.original.width) ?? 1)
+        let aspectCoef = (Double(gifModel.images.original.height ?? "0") ?? 0) / (Double(gifModel.images.original.width ?? "0") ?? 1)
         
         self.addSubview(self.shareButton)
         self.shareButton.snp.makeConstraints { make in

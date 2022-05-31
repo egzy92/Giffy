@@ -37,7 +37,10 @@ final class GalleryView: UIView, GalleryViewProtocol {
             
             cell.fill(data: nil)
             cell.shimeringView.backgroundColor = CellColors.random()
-            if let url = URL(string: item.images.previewGif.url) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                cell.shimeringView.startShimmeringAnimation()
+            })
+            if let url = URL(string: item.images.previewGif.url ?? "") {
                 self.uploadImageClosure(item, url)
                 .sink { _ in } receiveValue: { [weak self] data in
                     cell.fill(data: data)
@@ -96,7 +99,7 @@ extension GalleryView: UICollectionViewDelegateFlowLayout, CustomGalleryLayoutDe
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {
         let item = self.snapshot.itemIdentifiers(inSection: .gifList)[indexPath.row]
         let imageWidth = UIScreen.main.bounds.width / 2.0 - 16.0
-        return CGFloat(imageWidth / (Double(item.images.previewGif.width) ?? 1.0) * (Double(item.images.previewGif.height) ?? 1.0))
+        return CGFloat(imageWidth / (Double(item.images.previewGif.width ?? "0") ?? 1.0) * (Double(item.images.previewGif.height ?? "0") ?? 1.0))
         
     }
     

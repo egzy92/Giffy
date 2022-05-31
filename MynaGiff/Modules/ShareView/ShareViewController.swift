@@ -109,7 +109,7 @@ final class ShareViewController: UIViewController{
             }
             .store(in: &self.cancelable)
         
-        if let url = URL(string: self.viewModel.gifModel.images.original.url) {
+        if let url = URL(string: self.viewModel.gifModel.images.original.url  ?? "") {
             self.contentView.applyLoadingIndicator(shouldShow: true)
             self.viewModel.api.getImage(
                 id: self.viewModel.gifModel.id,

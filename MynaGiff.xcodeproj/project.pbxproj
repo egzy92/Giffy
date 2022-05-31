@@ -11,6 +11,7 @@
 		42389C192845F7D0006C30B2 /* CellColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C182845F7D0006C30B2 /* CellColors.swift */; };
 		42389C2128462358006C30B2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2028462358006C30B2 /* Cache.swift */; };
 		42389C242846239A006C30B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42389C232846239A006C30B2 /* SDWebImage */; };
+		42389C292846C124006C30B2 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C282846C124006C30B2 /* UIView+Shimmering.swift */; };
 		424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EB2844EDDB00893CF7 /* ShareViewController.swift */; };
 		424026EE2844EDE800893CF7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026ED2844EDE800893CF7 /* ShareView.swift */; };
 		424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EF2844EDF600893CF7 /* ShareViewModel.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		42389C182845F7D0006C30B2 /* CellColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellColors.swift; sourceTree = "<group>"; };
 		42389C2028462358006C30B2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		42389C282846C124006C30B2 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		424026EB2844EDDB00893CF7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		424026ED2844EDE800893CF7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		424026EF2844EDF600893CF7 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				424026F22845611100893CF7 /* UIControl.swift */,
 				42389C182845F7D0006C30B2 /* CellColors.swift */,
 				42389C2028462358006C30B2 /* Cache.swift */,
+				42389C282846C124006C30B2 /* UIView+Shimmering.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424026EE2844EDE800893CF7 /* ShareView.swift in Sources */,
+				42389C292846C124006C30B2 /* UIView+Shimmering.swift in Sources */,
 				424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */,
 				4243EAEA2843FE0B00FF78DE /* ImagesInfo.swift in Sources */,
 				4255C7342842D8B9006A0418 /* GiffyAPI.swift in Sources */,

@@ -4,7 +4,7 @@ import SDWebImage
 
 final class GiffyAPI {
     private let limit = 40
-    private let apiKey = "NZaXYlgname5zQKKBCdgUGn1LHmAfG0W"
+    private let apiKey = "eUweyLAZoKfMWxyD8jmTGwoLvySfAzsE"
     
     static let shared = GiffyAPI()
     private let cache = Cache(
@@ -26,12 +26,16 @@ final class GiffyAPI {
                 $0.data
             }
             .decode(type: TrendingGifs.self, decoder: JSONDecoder())
-            .catch { _ in
+            .catch { error -> AnyPublisher<TrendingGifs, Error> in
+                print(error)
                 return Empty<TrendingGifs, Error>()
                     .eraseToAnyPublisher()
             }
             .map { response in
                 return response.data
+                    .filter { model in
+                        model.images.previewGif.url != nil
+                    }
             }
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
