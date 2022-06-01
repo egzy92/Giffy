@@ -3,6 +3,7 @@ import UIKit
 import Combine
 import MobileCoreServices
 import Photos
+import MessageUI
 
 final class ShareViewController: UIViewController{
     
@@ -78,12 +79,6 @@ final class ShareViewController: UIViewController{
             }
             .store(in: &self.cancelable)
         
-        self.contentView.cancelButton.publisher(for: .touchUpInside)
-            .sink { _ in
-                self.dismiss(animated: true)
-            }
-            .store(in: &self.cancelable)
-        
         self.contentView.saveToPhotos.publisher(for: .touchUpInside)
             .sink { [weak self] _ in
                 if let gifData = self?.viewModel.gifData {
@@ -106,6 +101,14 @@ final class ShareViewController: UIViewController{
         self.loadingInProgress
             .sink { [weak self] loadingInProgress in
                 self?.contentView.applyLoadingIndicator(shouldShow: loadingInProgress)
+            }
+            .store(in: &self.cancelable)
+        
+        self.contentView.socialShareView.shareWithMedia
+            .sink { [weak self] source in
+                guard let self = self,
+                    let data = self.viewModel.gifData else { return }
+                Sharing.handleShareSourceTapped(data: data, source: source, parentViewContoller: self)
             }
             .store(in: &self.cancelable)
         
@@ -140,5 +143,11 @@ final class ShareViewController: UIViewController{
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+    }
+}
+
+extension ShareViewController: MFMessageComposeViewControllerDelegate {
+    public func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith _: MessageComposeResult) {
+        controller.dismiss(animated: true)
     }
 }

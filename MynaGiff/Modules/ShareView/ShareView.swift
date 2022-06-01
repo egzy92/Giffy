@@ -24,6 +24,8 @@ final class ShareView: UIView {
     
     public let imageView = FLAnimatedImageView()
     
+    public lazy var socialShareView = ShareSocialView()
+    
     public lazy var copyLinkButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = UIColor(
@@ -63,14 +65,6 @@ final class ShareView: UIView {
         return button
     }()
     
-    public lazy var cancelButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitleColor(.white, for: .normal)
-        button.setTitle("Cancel", for: .normal)
-        return button
-    }()
-    
     public lazy var loadingView: UIView = {
         let view = UIView()
         view.backgroundColor = .black.withAlphaComponent(0.2)
@@ -99,11 +93,9 @@ final class ShareView: UIView {
             make.top.equalTo(self.contentOffset)
         }
         
-        self.addSubview(self.cancelButton)
-        self.cancelButton.snp.makeConstraints { make in
-            make.height.equalTo(self.buttonHeight)
-            make.leading.equalTo(self.contentOffset)
-            make.trailing.equalTo(-self.contentOffset)
+        self.addSubview(self.socialShareView)
+        self.socialShareView.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
             make.bottom.equalTo(self.contentOffset).offset(-32.0)
         }
         
@@ -112,7 +104,7 @@ final class ShareView: UIView {
             make.height.equalTo(self.buttonHeight)
             make.leading.equalTo(self.contentOffset)
             make.trailing.equalTo(-self.contentOffset)
-            make.bottom.equalTo(self.cancelButton.snp.top).offset(-self.contentOffset)
+            make.bottom.equalTo(self.socialShareView.snp.top).offset(-self.contentOffset)
         }
         
         self.addSubview(self.copyGifButton)

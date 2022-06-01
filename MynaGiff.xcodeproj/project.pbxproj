@@ -14,6 +14,10 @@
 		42389C292846C124006C30B2 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C282846C124006C30B2 /* UIView+Shimmering.swift */; };
 		42389C2C2847456C006C30B2 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2B2847456C006C30B2 /* CategoriesView.swift */; };
 		42389C2E28474727006C30B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2D28474727006C30B2 /* Category.swift */; };
+		42389C30284794E9006C30B2 /* Sharing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2F284794E9006C30B2 /* Sharing.swift */; };
+		42389C3228479A5E006C30B2 /* ShareSocialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C3128479A5E006C30B2 /* ShareSocialView.swift */; };
+		42389C3528479ABB006C30B2 /* CategoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C3428479ABB006C30B2 /* CategoryType.swift */; };
+		42389C3728479AEB006C30B2 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C3628479AEB006C30B2 /* CategoryButton.swift */; };
 		424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EB2844EDDB00893CF7 /* ShareViewController.swift */; };
 		424026EE2844EDE800893CF7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026ED2844EDE800893CF7 /* ShareView.swift */; };
 		424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EF2844EDF600893CF7 /* ShareViewModel.swift */; };
@@ -42,6 +46,10 @@
 		42389C282846C124006C30B2 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		42389C2B2847456C006C30B2 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		42389C2D28474727006C30B2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		42389C2F284794E9006C30B2 /* Sharing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sharing.swift; sourceTree = "<group>"; };
+		42389C3128479A5E006C30B2 /* ShareSocialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSocialView.swift; sourceTree = "<group>"; };
+		42389C3428479ABB006C30B2 /* CategoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryType.swift; sourceTree = "<group>"; };
+		42389C3628479AEB006C30B2 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		424026EB2844EDDB00893CF7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		424026ED2844EDE800893CF7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		424026EF2844EDF600893CF7 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
@@ -116,6 +124,28 @@
 			isa = PBXGroup;
 			children = (
 				42389C2B2847456C006C30B2 /* CategoriesView.swift */,
+				42389C3628479AEB006C30B2 /* CategoryButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42389C3328479A88006C30B2 /* APIModels */ = {
+			isa = PBXGroup;
+			children = (
+				42B43FBC2841674F0099BD14 /* GifModel.swift */,
+				4243EAE328436B2800FF78DE /* Pagination.swift */,
+				4243EAE52843D23600FF78DE /* MetaInfo.swift */,
+				4243EAE72843D33300FF78DE /* TrendingGifs.swift */,
+				4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */,
+				42389C2D28474727006C30B2 /* Category.swift */,
+			);
+			path = APIModels;
+			sourceTree = "<group>";
+		};
+		42389C382847A705006C30B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42389C3128479A5E006C30B2 /* ShareSocialView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +153,7 @@
 		424026EA2844EDC600893CF7 /* ShareView */ = {
 			isa = PBXGroup;
 			children = (
+				42389C382847A705006C30B2 /* Views */,
 				424026EB2844EDDB00893CF7 /* ShareViewController.swift */,
 				424026ED2844EDE800893CF7 /* ShareView.swift */,
 				424026EF2844EDF600893CF7 /* ShareViewModel.swift */,
@@ -137,6 +168,7 @@
 				42389C182845F7D0006C30B2 /* CellColors.swift */,
 				42389C2028462358006C30B2 /* Cache.swift */,
 				42389C282846C124006C30B2 /* UIView+Shimmering.swift */,
+				42389C2F284794E9006C30B2 /* Sharing.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -176,12 +208,8 @@
 		42B43FBB284166D10099BD14 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				42B43FBC2841674F0099BD14 /* GifModel.swift */,
-				4243EAE328436B2800FF78DE /* Pagination.swift */,
-				4243EAE52843D23600FF78DE /* MetaInfo.swift */,
-				4243EAE72843D33300FF78DE /* TrendingGifs.swift */,
-				4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */,
-				42389C2D28474727006C30B2 /* Category.swift */,
+				42389C3328479A88006C30B2 /* APIModels */,
+				42389C3428479ABB006C30B2 /* CategoryType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424026EE2844EDE800893CF7 /* ShareView.swift in Sources */,
+				42389C3228479A5E006C30B2 /* ShareSocialView.swift in Sources */,
 				42389C292846C124006C30B2 /* UIView+Shimmering.swift in Sources */,
 				424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */,
 				4243EAEA2843FE0B00FF78DE /* ImagesInfo.swift in Sources */,
@@ -295,6 +324,9 @@
 				42389C2128462358006C30B2 /* Cache.swift in Sources */,
 				4243EAE428436B2800FF78DE /* Pagination.swift in Sources */,
 				4243EAE82843D33300FF78DE /* TrendingGifs.swift in Sources */,
+				42389C30284794E9006C30B2 /* Sharing.swift in Sources */,
+				42389C3528479ABB006C30B2 /* CategoryType.swift in Sources */,
+				42389C3728479AEB006C30B2 /* CategoryButton.swift in Sources */,
 				42B43FA1284162950099BD14 /* AppDelegate.swift in Sources */,
 				42B43FA3284162950099BD14 /* SceneDelegate.swift in Sources */,
 				4243EAF128441F1800FF78DE /* CustomGalleryLayout.swift in Sources */,

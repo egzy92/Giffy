@@ -3,57 +3,6 @@ import UIKit
 import SnapKit
 import Combine
 
-enum CategoryType: Equatable {
-    static func == (lhs: CategoryType, rhs: CategoryType) -> Bool {
-        switch (rhs, lhs) {
-        case (.trendy, .trendy):
-            return true
-        case (.custom(_), .trendy), (.trendy, .custom(_)):
-            return false
-        case (.custom(let rhsCategory),.custom(let lhsCategory)):
-            return (rhsCategory.nameEncoded == lhsCategory.nameEncoded) && (rhsCategory.name == lhsCategory.name)
-        }
-    }
-    
-    case trendy
-    case custom(Category)
-    
-    var nameEncoded: String {
-        switch self {
-        case .trendy:
-            return "trendy"
-        case .custom(let category):
-            return category.nameEncoded
-        }
-    }
-}
-
-fileprivate final class CategoryButton: UIButton {
-    public var category: CategoryType
-    
-    init(
-        category: Category?,
-        title: String,
-        action: @escaping () -> ()
-    ) {
-        if let category = category {
-            self.category = .custom(category)
-        } else {
-            self.category = .trendy
-        }
-        super.init(frame: .zero)
-        self.setTitleColor(.white, for: .normal)
-        self.setTitle(title, for: .normal)
-        self.contentEdgeInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
-        self.layer.cornerRadius = 20.0
-        self.addAction(action)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 final class CategoriesView: UIView {
     public var chooseCategory = PassthroughSubject<CategoryType, Never>()
     
