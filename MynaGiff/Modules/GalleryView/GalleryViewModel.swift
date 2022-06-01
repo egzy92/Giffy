@@ -18,7 +18,6 @@ final class GalleryViewModel {
         .removeDuplicates()
         .combineLatest(chosenCategoryType)
         .flatMap { [weak self] offset, type -> AnyPublisher<[GifModel], Error> in
-            print("ZZZZ \(offset) ----- \(type.nameEncoded)")
             guard let self = self else {
                 return Empty<[GifModel], Error>()
                     .eraseToAnyPublisher()

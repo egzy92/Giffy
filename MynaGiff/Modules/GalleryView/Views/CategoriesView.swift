@@ -99,7 +99,7 @@ final class CategoriesView: UIView {
         if self.categoriesStackView.arrangedSubviews.count == 0 {
             let trendingButton = CategoryButton(
                 category: nil,
-                title: "Trending",
+                title: "trending",
                 action: { [weak self] in
                     self?.categoryButtonTapped(category: nil)
                 }
@@ -125,10 +125,12 @@ final class CategoriesView: UIView {
     
     private func categoryButtonTapped(category: Category?) {
         for subview in self.categoriesStackView.arrangedSubviews {
-            if (subview as? CategoryButton)?.category.nameEncoded == category?.nameEncoded {
-                (subview as? CategoryButton)?.backgroundColor = UIColor(red: 103.0 / 255.0, green: 67.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0)
-            } else {
-                (subview as? CategoryButton)?.backgroundColor = .clear
+            if let categoryButton = subview as? CategoryButton {
+                if (categoryButton.category.nameEncoded == category?.nameEncoded) || (categoryButton.category.nameEncoded == "trendy" && category == nil) {
+                    (subview as? CategoryButton)?.backgroundColor = UIColor(red: 103.0 / 255.0, green: 67.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0)
+                } else {
+                    (subview as? CategoryButton)?.backgroundColor = .clear
+                }
             }
         }
         if let category = category {

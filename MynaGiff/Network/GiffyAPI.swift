@@ -2,6 +2,12 @@ import Foundation
 import Combine
 import SDWebImage
 
+enum APIRequest {
+    case getCategories
+    case getTrendy(Int)
+    case searchGif(Int, Category)
+}
+
 final class GiffyAPI {
     private let limit = 40
     private let apiKey = "eUweyLAZoKfMWxyD8jmTGwoLvySfAzsE"
@@ -20,21 +26,11 @@ final class GiffyAPI {
                 .eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map {
-                $0.data
-            }
-            .decode(type: Categories.self, decoder: JSONDecoder())
-            .catch { error -> AnyPublisher<Categories, Error> in
-                print(error)
-                return Empty<Categories, Error>()
+        return self.execute(url: url, decodingType: Categories.self)
+                    .map { response in
+                        return response.data
+                    }
                     .eraseToAnyPublisher()
-            }
-            .map { response in
-                return response.data
-            }
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
     }
     
     func gifModels(offset: Int) -> AnyPublisher<[GifModel], Error> {
@@ -45,24 +41,14 @@ final class GiffyAPI {
                 .eraseToAnyPublisher()
         }
         
-        return URLSession.shared.dataTaskPublisher(for: url)
-            .map {
-                $0.data
-            }
-            .decode(type: TrendingGifs.self, decoder: JSONDecoder())
-            .catch { error -> AnyPublisher<TrendingGifs, Error> in
-                print(error)
-                return Empty<TrendingGifs, Error>()
-                    .eraseToAnyPublisher()
-            }
-            .map { response in
-                return response.data
-                    .filter { model in
-                        model.images.previewGif.url != nil
+        return self.execute(url: url, decodingType: TrendingGifs.self)
+                    .map { response in
+                        return response.data
+                            .filter { model in
+                                model.images.previewGif.url != nil
+                            }
                     }
-            }
-            .receive(on: RunLoop.main)
-            .eraseToAnyPublisher()
+                    .eraseToAnyPublisher()
     }
     
     func gifSearch(category: Category, offset: Int) -> AnyPublisher<[GifModel], Error> {
@@ -72,21 +58,31 @@ final class GiffyAPI {
                 .eraseToAnyPublisher()
         }
         
+        return self.execute(url: url, decodingType: TrendingGifs.self)
+                    .map { response in
+                        return response.data
+                            .filter { model in
+                                model.images.previewGif.url != nil
+                            }
+                    }
+                    .eraseToAnyPublisher()
+    }
+    
+    func execute<T>(url: URL,
+                    decodingType: T.Type,
+                    retries: Int = 0) -> AnyPublisher<T, Error> where T: Codable {
         return URLSession.shared.dataTaskPublisher(for: url)
             .map {
                 $0.data
             }
-            .decode(type: TrendingGifs.self, decoder: JSONDecoder())
-            .catch { error -> AnyPublisher<TrendingGifs, Error> in
+            .decode(type: T.self, decoder: JSONDecoder())
+            .catch { error -> AnyPublisher<T, Error> in
                 print(error)
-                return Empty<TrendingGifs, Error>()
+                return Empty<T, Error>()
                     .eraseToAnyPublisher()
             }
             .map { response in
-                return response.data
-                    .filter { model in
-                        model.images.previewGif.url != nil
-                    }
+                return response
             }
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
