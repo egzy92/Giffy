@@ -4,7 +4,7 @@ import SnapKit
 import FLAnimatedImage
 import Combine
 
-class GalleryViewCell: UICollectionViewCell {
+final class GalleryViewCell: UICollectionViewCell {
     private var cancelable = Set<AnyCancellable>()
     
     static let identifier = "GalleryViewCell"

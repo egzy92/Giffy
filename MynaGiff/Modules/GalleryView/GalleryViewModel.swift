@@ -5,7 +5,8 @@ final class GalleryViewModel {
     var currentOffset = 0
     var offset = PassthroughSubject<Int, Never>()
     var gifModels = PassthroughSubject<[GifModel], Never>()
-    var isLoading: Bool = false
+    public var isLoading: Bool = false
+    var chosenCategoryType = CurrentValueSubject<CategoryType, Never>(.trendy)
     public var api: GiffyAPI
     
     private var cancelable: Set<AnyCancellable> = []
@@ -15,13 +16,20 @@ final class GalleryViewModel {
         
         self.offset
         .removeDuplicates()
-        .flatMap { [weak self] offset -> AnyPublisher<[GifModel], Error> in
+        .combineLatest(chosenCategoryType)
+        .flatMap { [weak self] offset, type -> AnyPublisher<[GifModel], Error> in
+            print("ZZZZ \(offset) ----- \(type.nameEncoded)")
             guard let self = self else {
                 return Empty<[GifModel], Error>()
                     .eraseToAnyPublisher()
             }
             self.isLoading = true
-            return self.api.gifModels(offset: offset)
+            switch type {
+            case .trendy:
+                return self.api.gifModels(offset: offset)
+            case .custom(let category):
+                return self.api.gifSearch(category: category, offset: offset)
+            }
         }
         .sink { comletion in } receiveValue: { [weak self] models in
             self?.isLoading = false

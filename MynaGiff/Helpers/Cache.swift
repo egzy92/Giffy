@@ -2,7 +2,7 @@ import Foundation
 import SDWebImage
 import UIKit
 
-public final class Cache {
+final class Cache {
     
     private let cache: SDImageCache
 

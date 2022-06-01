@@ -8,7 +8,7 @@ protocol CustomGalleryLayoutDelegate: AnyObject {
         cellWidth : CGFloat) -> CGFloat
 }
 
-class CustomGalleryLayout: UICollectionViewLayout {
+final class CustomGalleryLayout: UICollectionViewLayout {
     
     weak var delegate: CustomGalleryLayoutDelegate?
     private let numberOfColumns = 2

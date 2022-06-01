@@ -11,11 +11,62 @@ final class GiffyAPI {
         cache: SDImageCache.shared
     )
     
-    private let baseUrl = "https://api.giphy.com/v1/gifs/trending"
+    private let baseUrl = "https://api.giphy.com/v1/gifs/"
+    
+    func getCategories() -> AnyPublisher<[Category], Error> {
+        let fullUrl = URL(string: "\(baseUrl)categories?api_key=\(apiKey)")
+        guard let url = fullUrl else {
+            return Empty<[Category], Error>()
+                .eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map {
+                $0.data
+            }
+            .decode(type: Categories.self, decoder: JSONDecoder())
+            .catch { error -> AnyPublisher<Categories, Error> in
+                print(error)
+                return Empty<Categories, Error>()
+                    .eraseToAnyPublisher()
+            }
+            .map { response in
+                return response.data
+            }
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
     
     func gifModels(offset: Int) -> AnyPublisher<[GifModel], Error> {
         
-        let fullUrl = URL(string: "\(baseUrl)?api_key=\(apiKey)&limit=\(limit)&offset=\(String(offset * limit))&rating=g")
+        let fullUrl = URL(string: "\(baseUrl)trending?api_key=\(apiKey)&limit=\(limit)&offset=\(String(offset * limit))&rating=g")
+        guard let url = fullUrl else {
+            return Empty<[GifModel], Error>()
+                .eraseToAnyPublisher()
+        }
+        
+        return URLSession.shared.dataTaskPublisher(for: url)
+            .map {
+                $0.data
+            }
+            .decode(type: TrendingGifs.self, decoder: JSONDecoder())
+            .catch { error -> AnyPublisher<TrendingGifs, Error> in
+                print(error)
+                return Empty<TrendingGifs, Error>()
+                    .eraseToAnyPublisher()
+            }
+            .map { response in
+                return response.data
+                    .filter { model in
+                        model.images.previewGif.url != nil
+                    }
+            }
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
+    
+    func gifSearch(category: Category, offset: Int) -> AnyPublisher<[GifModel], Error> {
+        let fullUrl = URL(string: "\(baseUrl)search?api_key=\(apiKey)&limit=\(limit)&offset=\(String(offset * limit))&q=\(category.nameEncoded)")
         guard let url = fullUrl else {
             return Empty<[GifModel], Error>()
                 .eraseToAnyPublisher()

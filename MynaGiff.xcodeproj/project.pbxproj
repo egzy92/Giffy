@@ -12,6 +12,8 @@
 		42389C2128462358006C30B2 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2028462358006C30B2 /* Cache.swift */; };
 		42389C242846239A006C30B2 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 42389C232846239A006C30B2 /* SDWebImage */; };
 		42389C292846C124006C30B2 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C282846C124006C30B2 /* UIView+Shimmering.swift */; };
+		42389C2C2847456C006C30B2 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2B2847456C006C30B2 /* CategoriesView.swift */; };
+		42389C2E28474727006C30B2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42389C2D28474727006C30B2 /* Category.swift */; };
 		424026EC2844EDDB00893CF7 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EB2844EDDB00893CF7 /* ShareViewController.swift */; };
 		424026EE2844EDE800893CF7 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026ED2844EDE800893CF7 /* ShareView.swift */; };
 		424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424026EF2844EDF600893CF7 /* ShareViewModel.swift */; };
@@ -38,6 +40,8 @@
 		42389C182845F7D0006C30B2 /* CellColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellColors.swift; sourceTree = "<group>"; };
 		42389C2028462358006C30B2 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		42389C282846C124006C30B2 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
+		42389C2B2847456C006C30B2 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
+		42389C2D28474727006C30B2 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		424026EB2844EDDB00893CF7 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		424026ED2844EDE800893CF7 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
 		424026EF2844EDF600893CF7 /* ShareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewModel.swift; sourceTree = "<group>"; };
@@ -108,6 +112,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		42389C2A28474534006C30B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42389C2B2847456C006C30B2 /* CategoriesView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		424026EA2844EDC600893CF7 /* ShareView */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +181,7 @@
 				4243EAE52843D23600FF78DE /* MetaInfo.swift */,
 				4243EAE72843D33300FF78DE /* TrendingGifs.swift */,
 				4243EAE92843FE0B00FF78DE /* ImagesInfo.swift */,
+				42389C2D28474727006C30B2 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -176,6 +189,7 @@
 		42B43FC028416B3C0099BD14 /* GalleryView */ = {
 			isa = PBXGroup;
 			children = (
+				42389C2A28474534006C30B2 /* Views */,
 				42389C1D28460F39006C30B2 /* Layout */,
 				42389C1C28460F2B006C30B2 /* Cells */,
 				42B43FB4284164FE0099BD14 /* GalleryViewController.swift */,
@@ -273,6 +287,7 @@
 				42B43FBF28416B370099BD14 /* GalleryView.swift in Sources */,
 				42389C192845F7D0006C30B2 /* CellColors.swift in Sources */,
 				42B43FBA284165780099BD14 /* GalleryViewModel.swift in Sources */,
+				42389C2C2847456C006C30B2 /* CategoriesView.swift in Sources */,
 				424026F32845611100893CF7 /* UIControl.swift in Sources */,
 				42B43FBD2841674F0099BD14 /* GifModel.swift in Sources */,
 				42B43FB5284164FE0099BD14 /* GalleryViewController.swift in Sources */,
@@ -285,6 +300,7 @@
 				4243EAF128441F1800FF78DE /* CustomGalleryLayout.swift in Sources */,
 				424026F02844EDF600893CF7 /* ShareViewModel.swift in Sources */,
 				4243EAEC284407B000FF78DE /* GalleryViewCell.swift in Sources */,
+				42389C2E28474727006C30B2 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

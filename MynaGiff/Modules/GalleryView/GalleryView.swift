@@ -11,6 +11,7 @@ typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, GifModel>
 
 protocol GalleryViewProtocol {
     func show(gifModels: [GifModel])
+    func removeAllItems()
 }
 
 final class GalleryView: UIView, GalleryViewProtocol {
@@ -24,6 +25,7 @@ final class GalleryView: UIView, GalleryViewProtocol {
 
     private weak var galleryModule: GalleryViewController?
     private let collectionView: UICollectionView
+    public let categoriesView: CategoriesView
 
     private lazy var gridDataSouce = DataSource(
         collectionView: self.collectionView,
@@ -60,6 +62,7 @@ final class GalleryView: UIView, GalleryViewProtocol {
         let layout = CustomGalleryLayout()
         self.uploadImageClosure = uploadImageClosure
         self.collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        self.categoriesView = CategoriesView()
         super.init(frame: .zero)
         layout.delegate = self
         self.setupCollectionView()
@@ -90,7 +93,16 @@ final class GalleryView: UIView, GalleryViewProtocol {
 
         self.addSubview(self.collectionView)
         self.collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.bottom.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview().offset(88.0)
+        }
+        
+        self.addSubview(self.categoriesView)
+        self.categoriesView.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(88.0)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
         }
     }
 }
@@ -122,9 +134,20 @@ extension GalleryView: UICollectionViewDelegateFlowLayout, CustomGalleryLayoutDe
         self.snapshot = snapshot
         self.collectionView.isScrollEnabled = false
     }
-
+    
     func show(gifModels: [GifModel]) {
-        var newSnapshot = self.gridDataSouce.snapshot()
+        self.show(gifModels: gifModels, removeAllItems: false)
+    }
+
+    func show(gifModels: [GifModel], removeAllItems: Bool) {
+        var newSnapshot: DataSourceSnapshot
+        if removeAllItems {
+            newSnapshot = DataSourceSnapshot()
+            newSnapshot.appendSections([Section.gifList])
+            self.collectionView.setContentOffset(CGPoint(x:0,y:0), animated: false)
+        } else {
+            newSnapshot = self.gridDataSouce.snapshot()
+        }
         if gifModels.isEmpty {
             self.collectionView.isScrollEnabled = false
         } else {
@@ -136,6 +159,10 @@ extension GalleryView: UICollectionViewDelegateFlowLayout, CustomGalleryLayoutDe
         newSnapshot.appendItems(filteredModels, toSection: .gifList)
         self.snapshot = newSnapshot
         self.gridDataSouce.apply(newSnapshot, animatingDifferences: true, completion: {})
+    }
+    
+    func removeAllItems() {
+        self.show(gifModels: [], removeAllItems: true)
     }
 }
 

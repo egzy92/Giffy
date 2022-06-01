@@ -55,7 +55,23 @@ final class GalleryViewController: UIViewController{
                 self.present(vc, animated: true)
             }
             .store(in: &self.cancelable)
-            
+        
+        self.viewModel.api.getCategories()
+            .sink { _ in } receiveValue: { categories in
+                self.contentView.categoriesView.buildCategoryView(addedCategories: categories)
+            }
+            .store(in: &self.cancelable)
+
+        self.contentView.categoriesView.chooseCategory
+            .removeDuplicates()
+            .sink { _ in } receiveValue: { categoryType in
+                self.contentView.removeAllItems()
+                self.viewModel.chosenCategoryType.send(categoryType)
+                self.viewModel.isLoading = false
+                self.viewModel.currentOffset = 0
+                self.viewModel.offset.send(self.viewModel.currentOffset)
+            }
+            .store(in: &self.cancelable)
     }
     
     override func viewWillAppear(_ animated: Bool) {
