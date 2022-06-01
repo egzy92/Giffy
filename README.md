@@ -5,8 +5,6 @@ What is done:
 - High-quality preview for the image
 - An option to save to Photos
 - An option to copy the GIPHY link
-
-What is not done and should be improved:
 - Tabs for switching between categories (*optional*)
 - Shimmering animation on loading *(optional)*
 - Options for sharing to various social services (*optional*)
